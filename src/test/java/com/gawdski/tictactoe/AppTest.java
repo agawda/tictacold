@@ -1,5 +1,10 @@
 package com.gawdski.tictactoe;
 
-public class AppTest {
+import org.testng.annotations.Test;
 
+public class AppTest {
+    @Test
+    public void test() {
+
+    }
 }
