@@ -1,6 +1,6 @@
-#Tic Tac Toe game
+# Tic Tac Toe game
 
-##To run the project:
+## To run the project:
 1. Download the project sources
 2. Run mvn install inside the project folder
 3. Go to the target folder
