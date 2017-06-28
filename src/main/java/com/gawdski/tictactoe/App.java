@@ -21,8 +21,12 @@ public class App {
 
         System.out.println(x + " " + y);
 
-//        for(int i = 0; i < 3; i++) {
-//
-//        }
+        for(int i = 0; i < x; i++) {
+            for(int j = 0; j < y; j++) {
+                System.out.print("| ");
+            }
+            System.out.print("|");
+            System.out.println();
+        }
     }
 }
