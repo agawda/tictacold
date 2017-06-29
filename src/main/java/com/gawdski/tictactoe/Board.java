@@ -15,7 +15,9 @@ class Board {
     }
 
     void move(int tile, String symbol) {
-        board.put(tile, symbol);
+        if(board.get(tile).equals(" ")) {
+            board.put(tile, symbol);
+        }
     }
 
     void createEmptyBoard() {

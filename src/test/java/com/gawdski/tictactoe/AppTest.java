@@ -30,6 +30,18 @@ public class AppTest {
         assertEquals(boardLayout, expected);
     }
 
+    @Test
+    public void testOverwritingTile() {
+        Board board = new Board();
+        board.move(1, "X");
+        board.move(1, "O");
+        Map<Integer, String> boardLayout = board.getBoardLayout();
+
+        Map<Integer, String> expected = getEmptyBoard();
+        expected.put(1, "X");
+        assertEquals(boardLayout, expected);
+    }
+
     Map<Integer, String> getEmptyBoard() {
         Map<Integer, String> expected = new HashMap<>();
         expected.put(1, " ");
