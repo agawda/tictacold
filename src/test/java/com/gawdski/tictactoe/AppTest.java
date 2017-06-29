@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 @Test
 public class AppTest {
@@ -52,6 +53,14 @@ public class AppTest {
         assertEquals(board.getCurrentPlayer(), "O");
     }
 
+    @Test
+    public void winningConditionTest() {
+        Board board = new Board();
+        board.move(1, "X");
+        board.move(2, "X");
+        board.move(3, "X");
+        assertTrue(board.isGameFinished());
+    }
 
     Map<Integer, String> getEmptyBoard() {
         Map<Integer, String> expected = new HashMap<>();
