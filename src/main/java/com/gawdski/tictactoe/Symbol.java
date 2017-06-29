@@ -8,4 +8,10 @@ public enum Symbol {
         if(symbol.equalsIgnoreCase("o")) return O;
         return EMPTY;
     }
+
+    public static String getString(Symbol symbol) {
+        if(symbol.equals(X)) return "X";
+        if(symbol.equals(O)) return "O";
+        return " ";
+    }
 }

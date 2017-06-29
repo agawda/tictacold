@@ -17,4 +17,14 @@ public class SecondIterationTests {
         assertEquals(so, Symbol.O);
         assertEquals(sEmpty, Symbol.EMPTY);
     }
+
+    @Test
+    public void convertSymbolToStringTest() {
+        String x = Symbol.getString(Symbol.X);
+        String o = Symbol.getString(Symbol.O);
+        String empty = Symbol.getString(Symbol.EMPTY);
+        assertEquals(x, "X");
+        assertEquals(o, "O");
+        assertEquals(empty, " ");
+    }
 }

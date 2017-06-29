@@ -17,6 +17,8 @@
 ### 2nd iteration:
 1. Can you see the board?
 2. Can you create the Symbol from String?
-3. Are Symbol methods working properly?
+3. Is creating Symbols from Strings working properly?
+4. Is Board working with Symbols? (Reuse old tests.)
+5. Is converting Symbols to Strings working?
 
 

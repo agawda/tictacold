@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 class Board {
-    private Map<Integer, String> board;
+    private Map<Integer, Symbol> board;
     private String currentPlayer;
 
 
@@ -13,13 +13,13 @@ class Board {
         createEmptyBoard();
     }
 
-    Map<Integer, String> getBoardLayout() {
+    Map<Integer, Symbol> getBoardLayout() {
         return board;
     }
 
     void move(int tile, String symbol) {
-        if (board.get(tile).equals(" ")) {
-            board.put(tile, symbol);
+        if (board.get(tile).equals(Symbol.EMPTY)) {
+            board.put(tile, Symbol.getSymbol(symbol));
             swapPlayers();
         }
     }
@@ -39,8 +39,8 @@ class Board {
     boolean isGameFinished() {
         if (size() < 3)
             return false;
-        String winningSymbol = board.get(1);
-        if (!winningSymbol.equals(" ")) {
+        Symbol winningSymbol = board.get(1);
+        if (!winningSymbol.equals(Symbol.EMPTY)) {
             if (board.get(5).equals(winningSymbol)) {
                 if (board.get(9).equals(winningSymbol)) {
                     return true;
@@ -54,14 +54,14 @@ class Board {
             }
         }
         winningSymbol = board.get(2);
-        if (!winningSymbol.equals(" ")) {
+        if (!winningSymbol.equals(Symbol.EMPTY)) {
             if (board.get(5).equals(winningSymbol)) {
                 if (board.get(8).equals(winningSymbol)) return true;
             }
         }
 
         winningSymbol = board.get(3);
-        if (!winningSymbol.equals(" ")) {
+        if (!winningSymbol.equals(Symbol.EMPTY)) {
             if (board.get(5).equals(winningSymbol)) {
                 if (board.get(7).equals(winningSymbol)) return true;
             }
@@ -72,14 +72,14 @@ class Board {
 
 
         winningSymbol = board.get(4);
-        if (!winningSymbol.equals(" ")) {
+        if (!winningSymbol.equals(Symbol.EMPTY)) {
             if (board.get(5).equals(winningSymbol)) {
                 if (board.get(7).equals(winningSymbol)) return true;
             }
         }
 
         winningSymbol = board.get(7);
-        if (!winningSymbol.equals(" ")) {
+        if (!winningSymbol.equals(Symbol.EMPTY)) {
             if (board.get(8).equals(winningSymbol)) {
                 if (board.get(9).equals(winningSymbol)) return true;
             }
@@ -88,13 +88,13 @@ class Board {
     }
 
     private long size() {
-        return board.entrySet().stream().filter(x -> !x.getValue().equals(" ")).count();
+        return board.entrySet().stream().filter(x -> !x.getValue().equals(Symbol.EMPTY)).count();
     }
 
     private void createEmptyBoard() {
         board = new HashMap<>();
         for(int i = 1; i <= 9; i++) {
-            board.put(i, " ");
+            board.put(i, Symbol.EMPTY);
         }
     }
 

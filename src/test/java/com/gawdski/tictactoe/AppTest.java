@@ -12,8 +12,8 @@ public class AppTest {
     @Test
     public void testBoardInitialization() {
         Board board = new Board();
-        Map<Integer, String> boardLayout = board.getBoardLayout();
-        Map<Integer, String> expected = getEmptyBoard();
+        Map<Integer, Symbol> boardLayout = board.getBoardLayout();
+        Map<Integer, Symbol> expected = getEmptyBoard();
         assertEquals(boardLayout, expected);
     }
 
@@ -22,11 +22,11 @@ public class AppTest {
         Board board = new Board();
         board.move(1, "X");
         board.move(3, "X");
-        Map<Integer, String> boardLayout = board.getBoardLayout();
+        Map<Integer, Symbol> boardLayout = board.getBoardLayout();
 
-        Map<Integer, String> expected = getEmptyBoard();
-        expected.put(1, "X");
-        expected.put(3, "X");
+        Map<Integer, Symbol> expected = getEmptyBoard();
+        expected.put(1, Symbol.X);
+        expected.put(3, Symbol.X);
         assertEquals(boardLayout, expected);
     }
 
@@ -35,10 +35,10 @@ public class AppTest {
         Board board = new Board();
         board.move(1, "X");
         board.move(1, "O");
-        Map<Integer, String> boardLayout = board.getBoardLayout();
+        Map<Integer, Symbol> boardLayout = board.getBoardLayout();
 
-        Map<Integer, String> expected = getEmptyBoard();
-        expected.put(1, "X");
+        Map<Integer, Symbol> expected = getEmptyBoard();
+        expected.put(1, Symbol.X);
         assertEquals(boardLayout, expected);
     }
 
@@ -76,17 +76,11 @@ public class AppTest {
         assertTrue(board.isGameFinished());
     }
 
-    Map<Integer, String> getEmptyBoard() {
-        Map<Integer, String> expected = new HashMap<>();
-        expected.put(1, " ");
-        expected.put(2, " ");
-        expected.put(3, " ");
-        expected.put(4, " ");
-        expected.put(5, " ");
-        expected.put(6, " ");
-        expected.put(7, " ");
-        expected.put(8, " ");
-        expected.put(9, " ");
+    Map<Integer, Symbol> getEmptyBoard() {
+        Map<Integer, Symbol> expected = new HashMap<>();
+        for(int i = 1; i <= 9; i++) {
+            expected.put(i, Symbol.EMPTY);
+        }
         return expected;
     }
 
