@@ -18,7 +18,7 @@ class Board {
     }
 
     void move(int tile, String symbol) {
-        if(board.get(tile).equals(" ")) {
+        if (board.get(tile).equals(" ")) {
             board.put(tile, symbol);
             swapPlayers();
         }
@@ -29,7 +29,7 @@ class Board {
     }
 
     private void swapPlayers() {
-        if(this.currentPlayer.equals("X")) {
+        if (this.currentPlayer.equals("X")) {
             this.currentPlayer = "O";
         } else {
             this.currentPlayer = "X";
@@ -37,9 +37,54 @@ class Board {
     }
 
     boolean isGameFinished() {
-        if(size() < 3)
+        if (size() < 3)
             return false;
-        return board.entrySet().stream().filter(x -> x.getValue().equals("X")).count() == 3;
+        String winningSymbol = board.get(1);
+        if (!winningSymbol.equals(" ")) {
+            if (board.get(5).equals(winningSymbol)) {
+                if (board.get(9).equals(winningSymbol)) {
+                    return true;
+                }
+            }
+            if(board.get(2).equals(winningSymbol)) {
+                if(board.get(3).equals(winningSymbol)) return true;
+            }
+            if(board.get(4).equals(winningSymbol)) {
+                if(board.get(7).equals(winningSymbol)) return true;
+            }
+        }
+        winningSymbol = board.get(2);
+        if (!winningSymbol.equals(" ")) {
+            if (board.get(5).equals(winningSymbol)) {
+                if (board.get(8).equals(winningSymbol)) return true;
+            }
+        }
+
+        winningSymbol = board.get(3);
+        if (!winningSymbol.equals(" ")) {
+            if (board.get(5).equals(winningSymbol)) {
+                if (board.get(7).equals(winningSymbol)) return true;
+            }
+            if (board.get(6).equals(winningSymbol)) {
+                if (board.get(9).equals(winningSymbol)) return true;
+            }
+        }
+
+
+        winningSymbol = board.get(4);
+        if (!winningSymbol.equals(" ")) {
+            if (board.get(5).equals(winningSymbol)) {
+                if (board.get(7).equals(winningSymbol)) return true;
+            }
+        }
+
+        winningSymbol = board.get(7);
+        if (!winningSymbol.equals(" ")) {
+            if (board.get(8).equals(winningSymbol)) {
+                if (board.get(9).equals(winningSymbol)) return true;
+            }
+        }
+        return false;
     }
 
     private long size() {
