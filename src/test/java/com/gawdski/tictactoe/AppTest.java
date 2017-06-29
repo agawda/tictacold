@@ -5,8 +5,7 @@ import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
 
 @Test
 public class AppTest {
@@ -58,8 +57,7 @@ public class AppTest {
         Board board = new Board();
         board.move(1, "X");
         board.move(2, "X");
-        board.move(3, "X");
-        assertTrue(board.isGameFinished());
+        assertFalse(board.isGameFinished());
     }
 
     Map<Integer, String> getEmptyBoard() {

@@ -1,6 +1,7 @@
 package com.gawdski.tictactoe;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 class Board {
@@ -33,6 +34,17 @@ class Board {
         } else {
             this.currentPlayer = "X";
         }
+    }
+
+    boolean isGameFinished() {
+        if(size() < 3)
+            return false;
+        return true;
+    }
+
+    private long size() {
+        int symbolCount = 0;
+        return board.entrySet().stream().filter(x -> !x.getValue().equals(" ")).count();
     }
 
     void createEmptyBoard() {
