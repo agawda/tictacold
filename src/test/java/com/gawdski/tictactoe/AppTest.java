@@ -67,6 +67,15 @@ public class AppTest {
         assertTrue(board.isGameFinished());
     }
 
+    @Test
+    public void anotherWinningTest() {
+        Board board = new Board();
+        board.move(3, "O");
+        board.move(5, "O");
+        board.move(7, "O");
+        assertTrue(board.isGameFinished());
+    }
+
     Map<Integer, String> getEmptyBoard() {
         Map<Integer, String> expected = new HashMap<>();
         expected.put(1, " ");

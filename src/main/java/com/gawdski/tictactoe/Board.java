@@ -1,12 +1,12 @@
 package com.gawdski.tictactoe;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 class Board {
     private Map<Integer, String> board;
     private String currentPlayer;
+
 
     public Board() {
         this.currentPlayer = "X";
@@ -93,14 +93,18 @@ class Board {
 
     private void createEmptyBoard() {
         board = new HashMap<>();
-        board.put(1, " ");
-        board.put(2, " ");
-        board.put(3, " ");
-        board.put(4, " ");
-        board.put(5, " ");
-        board.put(6, " ");
-        board.put(7, " ");
-        board.put(8, " ");
-        board.put(9, " ");
+        for(int i = 1; i <= 9; i++) {
+            board.put(i, " ");
+        }
+    }
+
+    public void printBoard() {
+        board.forEach((k, v) -> {
+            System.out.printf("|%s", v);
+            if(k % 3 == 0) {
+                System.out.print("|");
+                System.out.println();
+            }
+        });
     }
 }
