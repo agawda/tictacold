@@ -5,8 +5,10 @@ import java.util.Map;
 
 class Board {
     private Map<Integer, String> board;
+    private String currentPlayer;
 
     public Board() {
+        this.currentPlayer = "X";
         createEmptyBoard();
     }
 
@@ -17,11 +19,20 @@ class Board {
     void move(int tile, String symbol) {
         if(board.get(tile).equals(" ")) {
             board.put(tile, symbol);
+            swapPlayers();
         }
     }
 
     String getCurrentPlayer() {
-        return "O";
+        return currentPlayer;
+    }
+
+    private void swapPlayers() {
+        if(this.currentPlayer.equals("X")) {
+            this.currentPlayer = "O";
+        } else {
+            this.currentPlayer = "X";
+        }
     }
 
     void createEmptyBoard() {

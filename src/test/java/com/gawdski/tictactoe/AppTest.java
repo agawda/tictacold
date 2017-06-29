@@ -42,6 +42,17 @@ public class AppTest {
         assertEquals(boardLayout, expected);
     }
 
+    @Test
+    public void changeSymbolsTest() {
+        Board board = new Board();
+        assertEquals(board.getCurrentPlayer(), "X");
+        board.move(1, "X");
+        assertEquals(board.getCurrentPlayer(), "O");
+        board.move(1, "X");
+        assertEquals(board.getCurrentPlayer(), "O");
+    }
+
+
     Map<Integer, String> getEmptyBoard() {
         Map<Integer, String> expected = new HashMap<>();
         expected.put(1, " ");
@@ -54,13 +65,6 @@ public class AppTest {
         expected.put(8, " ");
         expected.put(9, " ");
         return expected;
-    }
-
-    @Test
-    public void changeSymbolsTest() {
-        Board board = new Board();
-        board.move(1, "X");
-        assertEquals(board.getCurrentPlayer(), "O");
     }
 
 }
