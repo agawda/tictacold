@@ -7,10 +7,19 @@ class Board {
     private Map<Integer, String> board;
 
     public Board() {
-        board = new HashMap<>();
+        createEmptyBoard();
     }
 
-    public Map<Integer, String> getBoardLayout() {
+    Map<Integer, String> getBoardLayout() {
+        return board;
+    }
+
+    void move(int tile, String symbol) {
+        board.put(tile, symbol);
+    }
+
+    void createEmptyBoard() {
+        board = new HashMap<>();
         board.put(1, " ");
         board.put(2, " ");
         board.put(3, " ");
@@ -20,6 +29,5 @@ class Board {
         board.put(7, " ");
         board.put(8, " ");
         board.put(9, " ");
-        return board;
     }
 }
