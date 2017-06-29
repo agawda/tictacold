@@ -58,6 +58,10 @@ public class AppTest {
         board.move(1, "X");
         board.move(2, "X");
         assertFalse(board.isGameFinished());
+
+        board.move(3, "O");
+        assertFalse(board.isGameFinished());
+
     }
 
     Map<Integer, String> getEmptyBoard() {

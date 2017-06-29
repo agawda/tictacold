@@ -39,15 +39,14 @@ class Board {
     boolean isGameFinished() {
         if(size() < 3)
             return false;
-        return true;
+        return board.entrySet().stream().filter(x -> x.getValue().equals("X")).count() == 3;
     }
 
     private long size() {
-        int symbolCount = 0;
         return board.entrySet().stream().filter(x -> !x.getValue().equals(" ")).count();
     }
 
-    void createEmptyBoard() {
+    private void createEmptyBoard() {
         board = new HashMap<>();
         board.put(1, " ");
         board.put(2, " ");
