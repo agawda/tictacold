@@ -20,6 +20,10 @@ class Board {
         }
     }
 
+    String getCurrentPlayer() {
+        return "O";
+    }
+
     void createEmptyBoard() {
         board = new HashMap<>();
         board.put(1, " ");

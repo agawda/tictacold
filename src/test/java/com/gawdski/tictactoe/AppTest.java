@@ -7,7 +7,7 @@ import java.util.Map;
 
 import static org.testng.Assert.assertEquals;
 
-
+@Test
 public class AppTest {
     @Test
     public void testBoardInitialization() {
@@ -56,5 +56,11 @@ public class AppTest {
         return expected;
     }
 
+    @Test
+    public void changeSymbolsTest() {
+        Board board = new Board();
+        board.move(1, "X");
+        assertEquals(board.getCurrentPlayer(), "O");
+    }
 
 }
