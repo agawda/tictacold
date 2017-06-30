@@ -19,6 +19,11 @@ public class Symbols {
         }
     }
 
+    public Symbol getTile(int tile) {
+        //TODO: should throw an exception if the tile is invalid
+        return symbols.get(tile);
+    }
+
     public Map<Integer, Symbol> getBoardLayout() {
         return symbols;
     }

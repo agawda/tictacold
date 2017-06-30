@@ -23,4 +23,10 @@
 6. Does the board work with Symbols?
 
 ### 3rd iteration:
-1.
+#### Symbols class:
+1. Add a symbol.
+2. Is Overwriting fields impossible? (SHould throw exceptions in the future)
+3. Is it possible to check symbol at one tile?
+
+### 4th iteration:
+####

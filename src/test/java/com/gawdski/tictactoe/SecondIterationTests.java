@@ -2,6 +2,7 @@ package com.gawdski.tictactoe;
 
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,6 +42,26 @@ public class SecondIterationTests {
         expected.put(1, Symbol.X);
         expected.put(2, Symbol.X);
         assertEquals(symbols.getBoardLayout(), expected);
+    }
+
+    @Test
+    public void symbolsOverwritingFieldsTest() {
+        Symbols symbols = new Symbols();
+        symbols.add(1, "X");
+        symbols.add(1, "O");
+
+        Map<Integer, Symbol> expected = getEmptyBoard();
+        expected.put(1, Symbol.X);
+        assertEquals(symbols.getBoardLayout(), expected);
+    }
+
+    @Test
+    public void getOneTileTest() {
+        Symbols symbols = new Symbols();
+        symbols.add(1, "X");
+        assertEquals(symbols.getTile(1), Symbol.X);
+        symbols.add(1, "O");
+        assertEquals(symbols.getTile(1), Symbol.X);
     }
 
     Map<Integer, Symbol> getEmptyBoard() {
