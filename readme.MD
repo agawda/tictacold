@@ -9,8 +9,6 @@
 ## For review:
 1. Does Result class make sense at all?
 2. Is Symbols class used in a good way in the Board?
-3.
-
 
 ## Test list:
 ### 1st iteration:
@@ -44,4 +42,4 @@
 ### 5th iteration:
 #### Extract and change winning algorithm.
 1. Is Result class working?
-2.
+2. Change the algorithm.

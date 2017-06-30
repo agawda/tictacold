@@ -38,6 +38,7 @@ class Board {
     }
 
     boolean isGameFinished() {
+        //TODO: probably this method will be deleted completely very soon
         if (symbols.takenTilesNumber() < 3)
             return false;
         Symbol winningSymbol = symbols.getTile(1);

@@ -2,6 +2,7 @@ package com.gawdski.tictactoe;
 
 public class Result {
     public boolean gameWon(Board board) {
+        //TODO: implement an actual algorithm
         if(board.takenTiles() < 3) return false;
         Symbols symbols = board.getSymbols();
         Symbol winningSymbol = symbols.getTile(1);
