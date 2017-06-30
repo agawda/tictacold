@@ -13,6 +13,7 @@ class Board {
         createEmptyBoard();
     }
 
+    //TODO: prepare a String ready to print with this method instead
     Map<Integer, Symbol> getBoardLayout() {
         return symbols.getBoardLayout();
     }
@@ -93,7 +94,7 @@ class Board {
 
     public void printBoard() {
         symbols.getBoardLayout().forEach((k, v) -> {
-            System.out.printf("|%s", v);
+            System.out.printf("|%s", Symbol.getString(v));
             if(k % 3 == 0) {
                 System.out.print("|");
                 System.out.println();
