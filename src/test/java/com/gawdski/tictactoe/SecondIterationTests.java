@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class SecondIterationTests {
     @Test
@@ -62,6 +63,14 @@ public class SecondIterationTests {
         assertEquals(symbols.getTile(1), Symbol.X);
         symbols.add(1, "O");
         assertEquals(symbols.getTile(1), Symbol.X);
+    }
+
+    @Test
+    public void getTakenTilesNumber() {
+        Symbols symbols = new Symbols();
+        symbols.add(1, "X");
+        symbols.add(2, "X");
+        assertEquals(symbols.takenTilesNumber(), 2);
     }
 
     Map<Integer, Symbol> getEmptyBoard() {

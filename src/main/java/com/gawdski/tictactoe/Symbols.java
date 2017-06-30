@@ -24,6 +24,10 @@ public class Symbols {
         return symbols.get(tile);
     }
 
+    public long takenTilesNumber() {
+        return symbols.entrySet().stream().filter(x -> !x.getValue().equals(Symbol.EMPTY)).count();
+    }
+
     public Map<Integer, Symbol> getBoardLayout() {
         return symbols;
     }

@@ -29,4 +29,9 @@
 3. Is it possible to check symbol at one tile?
 
 ### 4th iteration:
-####
+#### Refactor Board so it uses Symbols.
+1. Does creating a new board work?
+2. Is adding new tiles working?
+3. Is printing working?
+4. Does win algorithm work?
+5.
