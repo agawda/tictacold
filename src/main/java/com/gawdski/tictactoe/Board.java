@@ -92,6 +92,10 @@ class Board {
         symbols = new Symbols();
     }
 
+    public long takenTiles() {
+        return symbols.takenTilesNumber();
+    }
+
     public void printBoard() {
         symbols.getBoardLayout().forEach((k, v) -> {
             System.out.printf("|%s", Symbol.getString(v));

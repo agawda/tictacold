@@ -6,6 +6,12 @@
 3. Go to the target folder
 4. Run tictactoe-1.0-SNAPSHOT.jar
 
+## For review:
+1. Does Result class make sense at all?
+2. Is Symbols class used in a good way in the Board?
+3.
+
+
 ## Test list:
 ### 1st iteration:
 1. Is board created properly?
@@ -34,4 +40,8 @@
 2. Is adding new tiles working?
 3. Is printing working?
 4. Does win algorithm work?
-5.
+
+### 5th iteration:
+#### Extract and change winning algorithm.
+1. Is Result class working?
+2.
