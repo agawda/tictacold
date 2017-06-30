@@ -2,7 +2,6 @@ package com.gawdski.tictactoe;
 
 import org.testng.annotations.Test;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,42 +34,42 @@ public class SecondIterationTests {
 
     @Test
     public void symbolsAddTest() {
-        Symbols symbols = new Symbols();
-        symbols.add(1, "X");
-        symbols.add(2, "X");
+        Tiles tiles = new Tiles();
+        tiles.add(1, "X");
+        tiles.add(2, "X");
 
         Map<Integer, Symbol> expected = getEmptyBoard();
         expected.put(1, Symbol.X);
         expected.put(2, Symbol.X);
-        assertEquals(symbols.getBoardLayout(), expected);
+        assertEquals(tiles.getBoardLayout(), expected);
     }
 
     @Test
     public void symbolsOverwritingFieldsTest() {
-        Symbols symbols = new Symbols();
-        symbols.add(1, "X");
-        symbols.add(1, "O");
+        Tiles tiles = new Tiles();
+        tiles.add(1, "X");
+        tiles.add(1, "O");
 
         Map<Integer, Symbol> expected = getEmptyBoard();
         expected.put(1, Symbol.X);
-        assertEquals(symbols.getBoardLayout(), expected);
+        assertEquals(tiles.getBoardLayout(), expected);
     }
 
     @Test
     public void getOneTileTest() {
-        Symbols symbols = new Symbols();
-        symbols.add(1, "X");
-        assertEquals(symbols.getTile(1), Symbol.X);
-        symbols.add(1, "O");
-        assertEquals(symbols.getTile(1), Symbol.X);
+        Tiles tiles = new Tiles();
+        tiles.add(1, "X");
+        assertEquals(tiles.getTile(1), Symbol.X);
+        tiles.add(1, "O");
+        assertEquals(tiles.getTile(1), Symbol.X);
     }
 
     @Test
     public void getTakenTilesNumber() {
-        Symbols symbols = new Symbols();
-        symbols.add(1, "X");
-        symbols.add(2, "X");
-        assertEquals(symbols.takenTilesNumber(), 2);
+        Tiles tiles = new Tiles();
+        tiles.add(1, "X");
+        tiles.add(2, "X");
+        assertEquals(tiles.takenTilesNumber(), 2);
     }
 
     Map<Integer, Symbol> getEmptyBoard() {

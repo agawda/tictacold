@@ -3,10 +3,10 @@ package com.gawdski.tictactoe;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Symbols {
+public class Tiles {
     private Map<Integer, Symbol> symbols;
 
-    public Symbols() {
+    public Tiles() {
         symbols = new HashMap<>();
         for(int i = 1; i <= 9; i++) {
             symbols.put(i, Symbol.EMPTY);
