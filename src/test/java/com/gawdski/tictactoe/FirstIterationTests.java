@@ -8,7 +8,7 @@ import java.util.Map;
 import static org.testng.Assert.*;
 
 @Test
-public class AppTest {
+public class FirstIterationTests {
     @Test
     public void testBoardInitialization() {
         Board board = new Board();
@@ -42,15 +42,15 @@ public class AppTest {
         assertEquals(boardLayout, expected);
     }
 
-    @Test
-    public void changeSymbolsTest() {
-        Board board = new Board();
-        assertEquals(board.getCurrentPlayer(), "X");
-        board.move(1, "X");
-        assertEquals(board.getCurrentPlayer(), "O");
-        board.move(1, "X");
-        assertEquals(board.getCurrentPlayer(), "O");
-    }
+//    @Test
+//    public void changeSymbolsTest() {
+//        Board board = new Board();
+//        assertEquals(board.getCurrentPlayer(), "X");
+//        board.move(1, "X");
+//        assertEquals(board.getCurrentPlayer(), "O");
+//        board.move(1, "X");
+//        assertEquals(board.getCurrentPlayer(), "O");
+//    }
 
     @Test
     public void winningConditionTest() {
