@@ -8,7 +8,7 @@ import java.util.Map;
 import static org.testng.Assert.*;
 
 @Test
-public class AppTest {
+public class FirstIterationTests {
     @Test
     public void testBoardInitialization() {
         Board board = new Board();

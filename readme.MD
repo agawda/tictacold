@@ -20,5 +20,7 @@
 3. Is creating Symbols from Strings working properly?
 4. Is Board working with Symbols? (Reuse old tests.)
 5. Is converting Symbols to Strings working?
+6. Does the board work with Symbols?
 
-
+### 3rd iteration:
+1.
