@@ -89,7 +89,7 @@ class Board {
         return false;
     }
 
-    private void createEmptyBoard() {
+    public void createEmptyBoard() {
         symbols = new Symbols();
     }
 
@@ -100,6 +100,10 @@ class Board {
     public Symbols getSymbols() {
         //TODO: temporary method used in Result, need to refactor that
         return symbols;
+    }
+
+    public Symbol getTile(int tile) {
+        return symbols.getTile(tile);
     }
 
     public void printBoard() {
