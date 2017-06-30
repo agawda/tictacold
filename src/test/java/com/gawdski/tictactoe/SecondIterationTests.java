@@ -1,12 +1,12 @@
 package com.gawdski.tictactoe;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
 
 public class SecondIterationTests {
     @Test
@@ -55,13 +55,19 @@ public class SecondIterationTests {
         assertEquals(tiles.getBoardLayout(), expected);
     }
 
-    @Test
-    public void getOneTileTest() {
+    @DataProvider(name = "dataOneTileTest")
+    public Object[][] dataOneTileTest() {
         Tiles tiles = new Tiles();
         tiles.add(1, "X");
-        assertEquals(tiles.getTile(1), Symbol.X);
         tiles.add(1, "O");
-        assertEquals(tiles.getTile(1), Symbol.X);
+        return new Object[][] {
+                {tiles.getTile(1), Symbol.X}
+        };
+    }
+
+    @Test(dataProvider = "dataOneTileTest")
+    public void getOneTileTest(Symbol actual, Symbol expected) {
+        assertEquals(actual, expected);
     }
 
     @Test

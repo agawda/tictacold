@@ -38,7 +38,14 @@
 ### 5th iteration:
 #### Extract and change winning algorithm.
 1. Is Result class working? ☑
-2. Change the algorithm.
+2. Change the algorithm. ☑ (Change it again later.)
+
+### 6th iteration:
+#### Player and Players classes
+1. Are player names stored correctly?
+2. Are player symbols stored correctly?
+3. Do players have scores?
+4.
 
 ## General todo:
 1. Player names
