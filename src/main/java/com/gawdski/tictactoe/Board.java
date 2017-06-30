@@ -96,6 +96,11 @@ class Board {
         return symbols.takenTilesNumber();
     }
 
+    public Symbols getSymbols() {
+        //TODO: temporary method used in Result, need to refactor that
+        return symbols;
+    }
+
     public void printBoard() {
         symbols.getBoardLayout().forEach((k, v) -> {
             System.out.printf("|%s", Symbol.getString(v));
